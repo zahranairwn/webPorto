@@ -1,0 +1,997 @@
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+html, body {
+  height: 100%;
+}
+ 
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FCF4A9;
+  color: #1a1a1a;
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   SIDEBAR KIRI (hiasan)
+   ============================================ */
+.sidebar {
+  width: 90px;
+  flex-shrink: 0;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+ 
+.sidebar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================
+   HERO / MAIN LAYOUT
+   ============================================ */
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 60px 80px 60px 60px;
+  min-height: 100vh;
+}
+
+ 
+/* ============================================
+   LEFT: HERO TEXT
+   ============================================ */
+.hero-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  margin-bottom: 28px;
+  color: #1a1a1a;
+}
+
+/* "Naila!" pakai Barriecito */
+.name-highlight {
+  font-family: 'Barriecito', cursive;
+  font-weight: 400;
+  font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+}
+ 
+.hero-desc {
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 36px;
+  max-width: 460px;
+}
+
+/* ============================================
+   TOMBOL ABOUT ME
+   ============================================ */
+.btn-about {
+  display: inline-block;
+  background-color: #C7D584;
+  color: #1a1a1a;
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 36px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 2px solid #a8bb5e;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+ 
+.btn-about:hover {
+  background-color: #b5c76a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(169, 189, 80, 0.35);
+}
+ 
+.btn-about:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   RIGHT: PROFILE CARD
+   ============================================ */
+.hero-card {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px 24px 28px;
+  width: 260px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  border: 2.5px solid #6BAED6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ============================================
+   PHOTO: FRAME + IMAGE
+   ============================================ */
+.photo-wrapper {
+  position: relative;
+  width: 200px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+/* Foto di bawah frame */
+.photo-img {
+  position: absolute;
+  width: 140px;
+  height: 165px;
+  object-fit: cover;
+  border-radius: 50% / 55%;
+  z-index: 1;
+}
+ 
+/* Bingkai di atas foto */
+.photo-frame {
+  position: absolute;
+  width: 200px;
+  height: 220px;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+/* ============================================
+   CARD INFO
+   ============================================ */
+.card-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+ 
+.card-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+ 
+.card-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1a1a1a;
+}
+ 
+.card-pronoun {
+  font-size: 0.75rem;
+  color: #888;
+  font-style: italic;
+}
+ 
+.card-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: #444;
+  line-height: 1.5;
+}
+ 
+.card-detail .icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #666;
+  stroke-width: 1.8;
+}
+ 
+/* ============================================
+   RESPONSIVE – TABLET
+   ============================================ */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+    gap: 48px;
+  }
+ 
+  .hero-text {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  .hero-desc {
+    text-align: left;
+  }
+ 
+  .sidebar {
+    width: 60px;
+  }
+}
+ 
+/* ============================================
+   RESPONSIVE – MOBILE
+   ============================================ */
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+ 
+  body {
+    flex-direction: column;
+  }
+ 
+  .hero {
+    padding: 40px 24px;
+    gap: 36px;
+  }
+ 
+  .hero-title {
+    font-size: 2.2rem;
+  }
+ 
+  .card {
+    width: 230px;
+  }
+ 
+  .photo-wrapper {
+    width: 170px;
+    height: 190px;
+  }
+ 
+  .photo-img {
+    width: 120px;
+    height: 142px;
+  }
+ 
+  .photo-frame {
+    width: 170px;
+    height: 190px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+/* ============================================
+   NAVBAR TABS
+   ============================================ */
+.tab-nav {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  padding-top: 12px;
+  background-color: #FCF4A9;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+ 
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 12px 8px 14px;
+  font-family: 'Barriecito', cursive;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #1a1a1a;
+  border-radius: 14px 14px 0 0;
+  margin-bottom: 0;
+  position: relative;
+  top: 3px;
+  transition: top 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+.tab:hover {
+  top: 0px;
+}
+ 
+.tab.active {
+  top: -4px;
+  padding-bottom: 18px;
+  font-weight: 700;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.08);
+  z-index: 2;
+}
+ 
+.tab-pink   { background-color: #FFBAD2; }
+.tab-purple  { background-color: #ECCCFF; }
+.tab-green  { background-color: #AFBD70; }
+.tab-grey   { background-color: #CDCAE7; }
+.tab-dark   { background-color: #595880; color: #333; }
+ 
+/* ============================================
+   PAGE ABOUT – BODY OVERRIDE
+   ============================================ */
+body.page-about {
+  display: block;
+  background-color: #FDFAE9; 
+  min-height: 100vh;
+}
+ 
+/* ============================================
+   ABOUT MAIN
+   ============================================ */
+.about-main {
+  padding: 48px 60px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+ 
+.about-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  text-align: center;
+  color: #AFBD70;
+  -webkit-text-stroke: 1.5px #6b7a3a;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+ 
+.about-title .barriecito {
+  font-family: 'Barriecito', cursive;
+  font-size: clamp(2.0rem, 3vw, 3.0rem);
+}
+ 
+/* ============================================
+   ABOUT CONTENT LAYOUT
+   ============================================ */
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+ 
+/* ============================================
+   KOTAK KUNING (CREAM)
+   ============================================ */
+.about-box {
+  flex: 1;
+  background-color: #FCF4A9;
+  border-radius: 15px;
+  border: 2px solid #c8b96a;
+  padding: 36px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  box-shadow: 4px 4px 0px #c8b96a;
+}
+ 
+.about-photo-left {
+  flex-shrink: 0;
+  width: 200px;
+  height: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #c8b96a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.about-photo-left img {
+  width: 150%;
+  height: 150%;
+  object-fit: cover;
+  object-position: center;
+}
+ 
+.about-bio {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.75;
+  color: #333;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ 
+/* ============================================
+   FOTO KANAN + CAPTION
+   ============================================ */
+.about-side {
+  flex-shrink: 0;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: px;
+}
+
+.about-photo-right {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.side-photo {
+  position: absolute;
+  width: 100%;
+  height: 69%;
+  top: 22%;
+  left: 7%;  /* naikin dari 12% */
+  object-fit: cover;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.side-frame {
+  position: absolute;
+  width: 115%;
+  height: 115%;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+}
+ 
+.about-caption {
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  font-size: 0.70rem;
+  color: #555;
+  text-align: justify;
+  line-height: 1.3;
+  width: 205px;
+  margin: 8px auto 0;
+}
+
+ 
+/* ============================================
+   RESPONSIVE ABOUT – TABLET
+   ============================================ */
+@media (max-width: 900px) {
+  .about-main {
+    padding: 32px 32px 48px;
+  }
+ 
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  .about-side {
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+ 
+  .about-photo-right {
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+  }
+ 
+  .about-caption {
+    text-align: left;
+  }
+}
+ 
+/* ============================================
+   RESPONSIVE ABOUT – MOBILE
+   ============================================ */
+@media (max-width: 600px) {
+  .tab {
+    font-size: 1rem;
+    padding: 12px 4px;
+  }
+ 
+  .about-main {
+    padding: 24px 16px 40px;
+  }
+ 
+  .about-box {
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  .about-photo-left {
+    width: 130px;
+    height: 180px;
+  }
+ 
+  .about-bio {
+    text-align: left;
+  }
+ 
+  .about-side {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+ 
+ 
+/* ============================================
+   PAGE EXPERIENCE
+   ============================================ */
+body.page-experience {
+  display: block;
+  background-color: #FDFAE9;
+  min-height: 100vh;
+}
+ 
+.exp-main {
+  padding: 48px 60px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+ 
+.exp-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  text-align: center;
+  color: #AFBD70;
+  -webkit-text-stroke: 1.5px #6b7a3a;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+ 
+.exp-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #555;
+  margin-bottom: 40px;
+}
+ 
+/* ============================================
+   EXPERIENCE GRID
+   ============================================ */
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+ 
+.exp-card {
+  background-color: #FCF4A9;
+  border-radius: 20px;
+  border: 2px solid #c8b96a;
+  box-shadow: 4px 4px 0px #c8b96a;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+ 
+.exp-photo {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+ 
+.exp-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+ 
+.exp-caption {
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  font-size: 0.82rem;
+  color: #333;
+  line-height: 1.6;
+  padding: 16px 18px 20px;
+}
+ 
+/* ============================================
+   RESPONSIVE EXPERIENCE
+   ============================================ */
+@media (max-width: 900px) {
+  .exp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+ 
+@media (max-width: 600px) {
+  .exp-main {
+    padding: 24px 16px 40px;
+  }
+ 
+  .exp-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+/* ============================================
+   PAGE ORGANIZATIONS
+   ============================================ */
+body.page-organizations {
+  display: block;
+  background-color: #FDFAE9;
+  min-height: 100vh;
+}
+
+.org-main {
+  padding: 48px 60px 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.org-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  text-align: center;
+  color: #AFBD70;
+  -webkit-text-stroke: 1.5px #6b7a3a;
+  line-height: 1.3;
+  margin-bottom: 36px;
+}
+
+.org-box {
+  background-color: #FCF4A9;
+  border-radius: 24px;
+  padding: 36px;
+}
+
+.org-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.org-card {
+  background-color: #FDFAE9;
+  border-radius: 16px;
+  border: 2px solid #333;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.org-photo {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.org-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: center 65%;
+}
+
+.org-caption {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  color: #1a1a1a;
+  line-height: 1.5;
+  padding: 14px 16px 18px;
+}
+
+@media (max-width: 700px) {
+  .org-main {
+    padding: 24px 16px 40px;
+  }
+  .org-grid {
+    grid-template-columns: 1fr;
+  }
+  .org-box {
+    padding: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================
+   PAGE COMMITTEES
+   ============================================ */
+body.page-committees {
+  display: block;
+  background-color: #FCF4A9;
+  min-height: 100vh;
+}
+
+.com-main {
+  padding: 48px 60px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.com-box {
+  background-color: #FDFAE9;
+  border-radius: 24px;
+  padding: 40px 48px;
+}
+
+.com-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  text-align: center;
+  color: #AFBD70;
+  -webkit-text-stroke: 1.5px #6b7a3a;
+  margin-bottom: 32px;
+}
+
+.com-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.com-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.com-item:last-child {
+  border-bottom: none;
+}
+
+.com-star {
+  font-size: 1.6rem;
+  color: #333;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.com-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.com-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+}
+
+.com-role {
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.com-year {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #333;
+  border: 1.5px solid #333;
+  border-radius: 999px;
+  padding: 4px 14px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .com-main {
+    padding: 24px 16px 40px;
+  }
+  .com-box {
+    padding: 24px 20px;
+  }
+  .com-name {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================
+   PAGE CONTACT
+   ============================================ */
+body.page-contact {
+  display: block;
+  background-color: #FDFAE9;
+  min-height: 100vh;
+}
+
+.contact-main {
+  padding: 48px 60px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  text-align: center;
+  color: #AFBD70;
+  -webkit-text-stroke: 1.5px #6b7a3a;
+  margin-bottom: 40px;
+}
+
+.contact-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+.contact-polaroid {
+  background-color: #595880;
+  border-radius: 8px;
+  padding: 20px 20px 60px;
+  width: 320px;
+  box-shadow: 4px 4px 16px rgba(0,0,0,0.15);
+}
+
+.polaroid-inner {
+  width: 100%;
+  height: 320px;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.polaroid-inner img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transform: scale(1.3);
+}
+
+.contact-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.social-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.social-ig {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-wa {
+  background-color: #25D366;
+}
+
+.social-gmail {
+  background-color: #fff;
+  border: 2px solid #ddd;
+  color: #EA4335;
+}
+
+.social-linkedin {
+  background-color: #0077B5;
+}
+
+@media (max-width: 600px) {
+  .contact-content {
+    flex-direction: column;
+    gap: 36px;
+  }
+  .contact-socials {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .contact-main {
+    padding: 24px 16px 40px;
+  }
+}
