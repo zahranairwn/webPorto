@@ -686,8 +686,8 @@ body.page-organizations {
 }
 
 .org-main {
-  padding: 48px 60px 60px;
-  max-width: 1000px;
+  padding: 48px 80px 60px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -705,7 +705,7 @@ body.page-organizations {
 .org-box {
   background-color: #FCF4A9;
   border-radius: 24px;
-  padding: 36px;
+  padding: 48px;
 }
 
 .org-grid {
@@ -725,7 +725,7 @@ body.page-organizations {
 
 .org-photo {
   width: 100%;
-  height: 240px;
+  height: 340px;
   overflow: hidden;
 }
 
@@ -739,10 +739,10 @@ body.page-organizations {
 
 .org-caption {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: #1a1a1a;
   line-height: 1.5;
-  padding: 14px 16px 18px;
+  padding: 18px 20px 22px;
 }
 
 @media (max-width: 700px) {
@@ -778,25 +778,25 @@ body.page-committees {
 }
 
 .com-main {
-  padding: 48px 60px 60px;
-  max-width: 900px;
+  padding: 48px 80px 60px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .com-box {
   background-color: #FDFAE9;
   border-radius: 24px;
-  padding: 40px 48px;
+  padding: 48px 64px;
 }
 
 .com-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
   text-align: center;
   color: #AFBD70;
   -webkit-text-stroke: 1.5px #6b7a3a;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
 }
 
 .com-list {
@@ -810,8 +810,8 @@ body.page-committees {
 .com-item {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 18px 0;
+  gap: 20px;
+  padding: 22px 0;
   border-bottom: 1px solid #ddd;
 }
 
@@ -820,7 +820,7 @@ body.page-committees {
 }
 
 .com-star {
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: #333;
   flex-shrink: 0;
   line-height: 1;
@@ -836,25 +836,25 @@ body.page-committees {
 .com-name {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: #1a1a1a;
 }
 
 .com-role {
   font-family: 'Poppins', sans-serif;
   font-style: italic;
-  font-size: 0.8rem;
+  font-size: 0.92rem;
   color: #555;
 }
 
 .com-year {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #333;
   border: 1.5px solid #333;
   border-radius: 999px;
-  padding: 4px 14px;
+  padding: 6px 18px;
   flex-shrink: 0;
 }
 
@@ -893,8 +893,8 @@ body.page-contact {
 }
 
 .contact-main {
-  padding: 48px 60px 60px;
-  max-width: 900px;
+  padding: 48px 80px 60px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -918,14 +918,14 @@ body.page-contact {
 .contact-polaroid {
   background-color: #595880;
   border-radius: 8px;
-  padding: 20px 20px 60px;
-  width: 320px;
+  padding: 24px 24px 80px;
+  width: 420px;
   box-shadow: 4px 4px 16px rgba(0,0,0,0.15);
 }
 
 .polaroid-inner {
   width: 100%;
-  height: 320px;
+  height: 440px;
   background-color: #fff;
   border-radius: 4px;
   overflow: hidden;
@@ -943,17 +943,17 @@ body.page-contact {
 .contact-socials {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 }
 
 .social-btn {
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   color: #fff;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
